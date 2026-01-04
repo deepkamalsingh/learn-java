@@ -21,9 +21,38 @@
     - java collections is similar to c++ STL.
     
     
-## Java Collections
+## Java Collections and other data structures
+- custom class
+    ```java
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+    ListNode s = new ListNode();
+    // can do (list1 != null || list2 != null)
+    // "<>" operator is not required above as it is only required for generics.
+    ```
+- string
+    ```java
+    String greeting = "Hello";
+    char firstChar = greeting.charAt(0); // 'H'
+    char thirdChar = greeting.charAt(2); // 'l'
+    int sizeOfString = greeting.length(); 
+    ```
 - Lists
     - ArrayList
+    ```java
+    ArrayList<String> cars = new ArrayList<>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    System.out.println(cars.get(i));
+
+    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40));
+    list.remove(list.size() - 1);
+    ```
     - LinkedList  
 - Sets 
     - HashSet 
@@ -39,8 +68,9 @@
 - Maps 
     - HashMap 
         - Syntax: 
-        ```
+        ```java
         HashMap<KeyType, ValueType> myMap = new HashMap<>();
+        ValueType m = myMap.getOrDefault(key);
         myMap.put("key", "value");
         System.out.println(myMap.get("key"));
         ```
@@ -79,6 +109,18 @@
     - when to use objects (`Integer`)
         - Collections e.x. `Map<Integer, Integer>`.
         - representing null value.
+    - wrapping
+        - wrapping for type erasure
+        ```java
+        int - Integer
+        char - Character
+        boolean - Boolean
+        byte - Byte
+        short - Short
+        long - Long
+        float - Float
+        double - Double
+        ```
 
 - Why `ArrayList<Integer>` instead of `ArrayList<int>` ?
     - Type Erasure:
